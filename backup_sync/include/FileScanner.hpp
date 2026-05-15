@@ -10,7 +10,7 @@ class FileScanner {
         );
 
     private:
-        void scanRecursive(
+        void scanDirectory(
             const std::filesystem::path& current,
             std::vector<std::filesystem::path>& files
         );
