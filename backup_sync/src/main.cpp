@@ -29,5 +29,8 @@ int main(int argc, char* argv[])
     std::cout << "Source Directory: " << sourceDir << std::endl;
     std::cout << "Backup Directory: " << backupDir << std::endl;
     std::cout << "Thread Count: " << threadCount << std::endl;
+
+
+    
     return 0;
 }
