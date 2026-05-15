@@ -3,6 +3,7 @@
 #include <queue>
 #include <mutex>
 #include <condition_variable>
+#include <vector>
 
 struct Job {
     std::filesystem::path source;
@@ -12,13 +13,14 @@ struct Job {
 class ThreadPool {
     public:
         ThreadPool(int numThreads);
-        ThreadPool();
+        ~ThreadPool();
 
         void addJob(const Job& job);
         void start();
         void wait();
 
         private:
+            int numThreads;
             void workerThread();
             std::vector<std::thread> workers;
             std::queue<Job> jobs;
